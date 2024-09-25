@@ -1,6 +1,5 @@
 package com.company.spring_boot_crud_app;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -12,8 +11,11 @@ import java.util.List;
 @RequestMapping("/api/productos") // Prefijo para las rutas de este controlador
 public class ProductoController {
 
-    @Autowired // Inyección de dependencia del repositorio
-    private ProductoRepository productoRepository;
+    private final ProductoRepository productoRepository;
+
+    public ProductoController(ProductoRepository productoRepository) {
+        this.productoRepository = productoRepository;
+    }
 
     // Método para obtener todos los productos
     @GetMapping
