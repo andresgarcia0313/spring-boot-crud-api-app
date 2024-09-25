@@ -1,54 +1,112 @@
 package com.company.spring_boot_crud_app;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
-// Esta es la clase de entidad que representa un Producto
+/**
+ * Clase de entidad que representa un Producto en la base de datos.
+ * Un producto tiene un ID, un nombre y un precio.
+ */
 @Entity
-@Table(name = "productos") // Indica el nombre de la tabla en la base de datos
+@Table(name = "productos") // Mapea esta entidad a la tabla "productos" en la base de datos
 public class Producto {
 
-    @Id // Indica que este campo es la clave primaria
-    @GeneratedValue(strategy = GenerationType.IDENTITY) // Se auto-genera el ID
+    /**
+     * Campo ID que actúa como clave primaria en la tabla de la base de datos.
+     * Se auto-genera con una estrategia de identidad (autoincremental).
+     */
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false) // Esta columna no puede ser nula
+    /**
+     * Campo para almacenar el nombre del producto.
+     * Esta columna no puede ser nula (nullable = false).
+     */
+    @Column(nullable = false)
     private String nombre;
 
-    @Column(nullable = false) // Esta columna no puede ser nula
-    private Double precio; // Agregamos el campo "precio"
+    /**
+     * Campo para almacenar el precio del producto.
+     * Esta columna no puede ser nula (nullable = false).
+     */
+    @Column(nullable = false)
+    private Double precio;
 
-    // Constructor vacío
+    /**
+     * Constructor vacío requerido por JPA.
+     * JPA (Java Persistence API) necesita un constructor sin parámetros para poder
+     * instanciar la entidad.
+     */
     public Producto() {
     }
 
-    // Constructor con parámetros
-    public Producto(String nombre, Double precio) { // Incluimos "precio" en el constructor
+    /**
+     * Constructor que permite crear un Producto con un nombre y precio.
+     * 
+     * @param nombre El nombre del producto.
+     * @param precio El precio del producto.
+     */
+    public Producto(String nombre, Double precio) {
         this.nombre = nombre;
         this.precio = precio;
     }
 
-    // Getters y Setters
+    /**
+     * Obtiene el ID del producto.
+     * 
+     * @return El ID del producto.
+     */
     public Long getId() {
         return id;
     }
 
+    /**
+     * Establece el ID del producto.
+     * 
+     * @param id El ID del producto.
+     */
     public void setId(Long id) {
         this.id = id;
     }
 
+    /**
+     * Obtiene el nombre del producto.
+     * 
+     * @return El nombre del producto.
+     */
     public String getNombre() {
         return nombre;
     }
 
+    /**
+     * Establece el nombre del producto.
+     * 
+     * @param nombre El nombre del producto.
+     */
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
-    public Double getPrecio() { // Getter para "precio"
+    /**
+     * Obtiene el precio del producto.
+     * 
+     * @return El precio del producto.
+     */
+    public Double getPrecio() {
         return precio;
     }
 
-    public void setPrecio(Double precio) { // Setter para "precio"
+    /**
+     * Establece el precio del producto.
+     * 
+     * @param precio El precio del producto.
+     */
+    public void setPrecio(Double precio) {
         this.precio = precio;
     }
 }
