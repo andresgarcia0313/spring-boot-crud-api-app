@@ -1,9 +1,22 @@
-docker run --name mi_base_datos_mysql \
-    -e MYSQL_ROOT_PASSWORD=mi_contrasea_root \        # Contraseña para el usuario root
--e MYSQL_DATABASE=mi_base_datos \                     # Nombre de la base de datos que se creará al iniciar el contenedor
--e MYSQL_USER=mi_usuario \                            # Nombre del usuario que se creará
--e MYSQL_PASSWORD=mi_contrasea_usuario \              # Contraseña para el usuario creado
--p 3306:3306 \                                        # Exposición del puerto 3306 para acceso externo
--d mysql:latest \                                     # Imagen de MySQL en modo detach (en segundo plano)
--v /data/mysql:/var/lib/mysql \                       # Montaje de un volumen para persistencia de datos
---default-authentication-plugin=mysql_native_password # Uso del plugin de autenticación nativa
+docker stop db
+docker rm db
+sudo rm -vfr ./db
+mkdir -p ./db/data
+sudo chmod -R 777 $(pwd)/db/data
+sudo chmod -R 777 $(pwd)/db
+sudo apt install mysql-client -y
+#En windows es necesario instalar el cliente de mysql con winget
+#winget install mysql-shell
+#winget install Oracle.MySQL --source winget
+
+docker run --name db \
+    -v ./db/data:/var/lib/mysql \
+    -e MYSQL_ROOT_PASSWORD=Asde71.4Asde71.4 \
+    -e MYSQL_DATABASE=db \
+    -e MYSQL_USER=usuario \
+    -e MYSQL_PASSWORD=Asde71.4Asde71.4 \
+    -p 3306:3306 \
+    -d mysql:latest
+sleep 10
+docker logs db
+
