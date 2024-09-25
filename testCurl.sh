@@ -11,15 +11,22 @@ curl -X POST $BASE_URL \
 -H "Content-Type: application/json" \
 -d '{"nombre": "Producto 1"}'
 echo -e "\n"
+
+
 echo "Creando un nuevo producto..."
 curl -X POST $BASE_URL \
 -H "Content-Type: application/json" \
 -d '{"nombre": "Producto X"}'
 echo -e "\n"
+
+
 echo "Creando un nuevo producto..."
 curl -X POST $BASE_URL \
 -H "Content-Type: application/json" \
--d '{"nombre": "Producto X"}'
+-d '{
+  "nombre": "ProductoEjemplo",
+  "precio": 19.99
+}'
 echo -e "\n"
 
 # 2. Obtener todos los productos
