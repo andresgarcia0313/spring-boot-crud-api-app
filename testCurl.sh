@@ -11,6 +11,16 @@ curl -X POST $BASE_URL \
 -H "Content-Type: application/json" \
 -d '{"nombre": "Producto 1"}'
 echo -e "\n"
+echo "Creando un nuevo producto..."
+curl -X POST $BASE_URL \
+-H "Content-Type: application/json" \
+-d '{"nombre": "Producto X"}'
+echo -e "\n"
+echo "Creando un nuevo producto..."
+curl -X POST $BASE_URL \
+-H "Content-Type: application/json" \
+-d '{"nombre": "Producto X"}'
+echo -e "\n"
 
 # 2. Obtener todos los productos
 echo "Obteniendo todos los productos..."
@@ -31,7 +41,7 @@ echo -e "\n"
 
 # 5. Eliminar el producto con ID 1
 echo "Eliminando el producto con ID 1..."
-curl -X DELETE $BASE_URL/1
+curl -X DELETE $BASE_URL/3
 echo -e "\n"
 
 # 6. Obtener todos los productos después de la eliminación
