@@ -14,13 +14,17 @@ public class Producto {
     @Column(nullable = false) // Esta columna no puede ser nula
     private String nombre;
 
+    @Column(nullable = false) // Esta columna no puede ser nula
+    private Double precio; // Agregamos el campo "precio"
+
     // Constructor vacío
     public Producto() {
     }
 
     // Constructor con parámetros
-    public Producto(String nombre) {
+    public Producto(String nombre, Double precio) { // Incluimos "precio" en el constructor
         this.nombre = nombre;
+        this.precio = precio;
     }
 
     // Getters y Setters
@@ -38,5 +42,13 @@ public class Producto {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    public Double getPrecio() { // Getter para "precio"
+        return precio;
+    }
+
+    public void setPrecio(Double precio) { // Setter para "precio"
+        this.precio = precio;
     }
 }
