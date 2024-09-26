@@ -2,7 +2,7 @@
   "configurations": [
     {
       "type": "java",
-      "name": "Debug",
+      "name": "Spring Depurar",
       "request": "launch",
       "cwd": "${workspaceFolder}",
       "mainClass": "com.company.spring_boot_crud_app.SpringBootCrudAppApplication",

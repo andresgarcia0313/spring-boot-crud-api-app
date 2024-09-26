@@ -31,7 +31,5 @@ build/
 !**/src/main/**/build/
 !**/src/test/**/build/
 
-### VS Code ###
-.vscode/
-src/main/resources/application.properties
+### Base De Datos Mysql ###
 db
