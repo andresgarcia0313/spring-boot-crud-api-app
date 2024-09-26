@@ -1,0 +1,30 @@
+{
+    "recommendations": [
+        "formulahendry.code-runner",
+        "vscjava.vscode-java-debug",
+        "dgileadi.java-decompiler",
+        "mikestead.dotenv",
+        "vscjava.vscode-java-pack",
+        "mhutchie.git-graph",
+        "github.copilot",
+        "github.copilot-chat",
+        "eamodio.gitlens",
+        "vscjava.vscode-gradle",
+        "naco-siren.gradle-language",
+        "redhat.java",
+        "pkief.material-icon-theme",
+        "vscjava.vscode-maven",
+        "ibm.output-colorizer",
+        "postman.postman-for-vscode",
+        "inferrinizzard.prettier-sql-vscode",
+        "vscjava.vscode-java-dependency",
+        "redhat.fabric8-analytics",
+        "sonarsource.sonarlint-vscode",
+        "ms-ceintl.vscode-language-pack-es",
+        "vmware.vscode-boot-dev-pack",
+        "mtxr.sqltools",
+        "mtxr.sqltools-driver-mysql",
+        "vscjava.vscode-java-test"
+
+    ]
+}

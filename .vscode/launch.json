@@ -1,0 +1,15 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Debug",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "mainClass": "com.company.spring_boot_crud_app.SpringBootCrudAppApplication",
+      "projectName": "spring-boot-crud-app",
+      "args": "",
+      "envFile": "${workspaceFolder}/.env",
+      "console": "internalConsole" 
+    }
+  ]
+}
